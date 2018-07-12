@@ -13,7 +13,6 @@ class Auth extends CI_Controller
         parent::_construct();
        $this->load->library('javascript');
   $this->load->library('form_validation');
-
   $this->load->library('session');
   if(!isset($_SESSION['user_logged']))
   {
@@ -80,10 +79,7 @@ public function login()
         }
 $this->load->view('login');
 }
-public function userprofile()
-{
-    $this->load->view('userprofile');
-}
+
 public function registration()
 {
    
@@ -301,19 +297,12 @@ public function matching_captcha($str){
 			$this->form_validation->set_message('matching_captcha', 'The {field} did not matching');
 			return false;
 		}else{
+                    $this->load->library('Pdf');
+                      $this->load->view('makepdf');
 			return true;
 		}
 	}
-        public function dbdoctor()
- { 
-          
-       
-            $this->load-> model('Auth_model');
-  
-    $da["getUser"]=$this->Auth_model->getUser("Delhi");
-   
-       $this->load->view('dbdoctor',$da);
- }
+
 public function dashboard()
 {
     $this->load->view('dashboard');
@@ -341,23 +330,7 @@ public function doctorlogin()
      $username= $_POST['username'];
      $password=$_POST['password'];
      $date= date("Y-m-d h:i:sa");
-       $ipaddress = '';
-    if (getenv('HTTP_CLIENT_IP'))
-        $ipaddress = getenv('HTTP_CLIENT_IP');
-    else if(getenv('HTTP_X_FORWARDED_FOR'))
-        $ipaddress = getenv('HTTP_X_FORWARDED_FOR');
-    else if(getenv('HTTP_X_FORWARDED'))
-        $ipaddress = getenv('HTTP_X_FORWARDED');
-    else if(getenv('HTTP_FORWARDED_FOR'))
-        $ipaddress = getenv('HTTP_FORWARDED_FOR');
-    else if(getenv('HTTP_FORWARDED'))
-       $ipaddress = getenv('HTTP_FORWARDED');
-    else if(getenv('REMOTE_ADDR'))
-        $ipaddress = getenv('REMOTE_ADDR');
-    else
-        $ipaddress = 'UNKNOWN';
-     $audit_data=array('Username'=>$username,'Password'=>$password,'time'=>$date,'ipaddress'=>$ipaddress);
-     $this->db->insert('audittable',$audit_data);
+      
      $this->db->select('*');
      $this->db->from('doctorlogin');
      $this->db->where(array('Username' => $username, 'Password' => $password));
@@ -381,4 +354,8 @@ public function doctorlogin()
         }
 $this->load->view('doctorlogin');
 }
+   public function makepdf(){
+       $this->load->library('Pdf');
+       $this->load->view('makepdf');
+    }
 }

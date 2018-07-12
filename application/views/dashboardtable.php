@@ -21,7 +21,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-      <a class="navbar-brand" href="dashboard">User Data</a>
+      <a class="navbar-brand" href="dashboardtable">User Data</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -35,7 +35,7 @@
         </li>
         
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="dashboardtable">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">User Data</span>
           </a>
@@ -197,7 +197,7 @@
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Data Table Example</div>
+          <i class="fa fa-table"></i>User Data</div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -218,7 +218,7 @@
      ?>      
      <tr>
          
-         <td><a href="certi" onclick= "<?php $_SESSION['benificiary']=$row->Name;?>" value="<?php echo $row->BId;?>"><?php echo $row->BId;?></a></td>
+         <td><a href="certi"  onclick="<?php $_SESSION['benificiary']=$row->BId; ?>" value="<?php echo $row->BId;?>"><?php echo $row->BId;?></a></td>
          <td><?php echo $row->Name;?></td>
          <td><?php echo $row->State;?></td>
          <td><?php echo $row->Status;?></td>
@@ -272,6 +272,12 @@
         </div>
       </div>
     </div>
+    <script>
+   $(".testClick").click(function () {
+        var anchorValue= $(this).attr("href");
+        alert(anchorValue);
+});
+        </script>
     <!-- Bootstrap core JavaScript-->
     <script src="<?php echo base_url(); ?>vendor/jquery/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
