@@ -354,8 +354,9 @@ public function doctorlogin()
         }
 $this->load->view('doctorlogin');
 }
-   public function makepdf(){
-       $this->load->library('Pdf');
-       $this->load->view('makepdf');
-    }
+   public function userdashboard()
+   {
+       $this->load->view('userdashboard');
+   }
+    
 }
