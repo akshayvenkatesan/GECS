@@ -235,7 +235,7 @@
                             <h2 class="fs-title">User </h2>
 
                             <h3 class="fs-subtitle">This is step 1</h3>
-                            <label class="label-input100" for="name">1. Name of Applicant</label>
+                            <label class="label-input100" for="name">1. Name of Aaapplicant</label>
                             <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type name">
                                 <input id="name" class="input100" type="text" name="name" placeholder="Name of the applicant">
                                 <span class="focus-input100"></span>
