@@ -65,7 +65,7 @@ public function login()
          $this->session->set_flashdata("success","You are logged in");
          $_SESSION['user_logged']=TRUE;
          $_SESSION['username']=$user->Username;
-         redirect('auth/userprofile','refresh');
+         redirect('auth/userdashboard','refresh');
      }
      else
      {
