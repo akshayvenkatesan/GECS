@@ -358,5 +358,18 @@ $this->load->view('doctorlogin');
    {
        $this->load->view('userdashboard');
    }
-    
+    public function changepassword()
+        {
+          $this->form_validation->set_rules('currentPassword','Field','required');
+            $this->form_validation->set_rules('newPassword','Field','required');
+          $this->form_validation->set_rules('confirmPassword','Field','required');
+          if($this->form_validation->run()==TRUE)
+           {
+     $current= $_POST['currentPassword'];
+     $new=$_POST['newPassword'];
+     $confirm=$_POST['confirmPassword'];
+           }
+            $this->load->view('changepassword');
+        }
+   
 }
