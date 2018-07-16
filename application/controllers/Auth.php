@@ -305,6 +305,10 @@ public function matching_captcha($str){
 
 public function dashboard()
 {
+     if(isset($_POST['changepasswordbutton']))
+       {
+        redirect('changepassword');
+       }
     $this->load->view('dashboard');
 }
 public function dashboardtable()
@@ -356,6 +360,7 @@ $this->load->view('doctorlogin');
 }
    public function userdashboard()
    {
+      
        $this->load->view('userdashboard');
    }
     public function changepassword()
