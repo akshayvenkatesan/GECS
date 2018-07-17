@@ -365,14 +365,29 @@ $this->load->view('doctorlogin');
    }
     public function changepassword()
         {
-          $this->form_validation->set_rules('currentPassword','Field','required');
-            $this->form_validation->set_rules('newPassword','Field','required');
-          $this->form_validation->set_rules('confirmPassword','Field','required');
+          if(isset($_POST['changepasswordbutton']))
+     {
+           
+          $this->form_validation->set_rules('currentpassword','Current Password','required');
+            $this->form_validation->set_rules('newpassword','New Password','required|min_length[5]');
+          $this->form_validation->set_rules('newpasswordcheck','Confirm new password','required|min_length[5]|matches[newpassword]');
+          
           if($this->form_validation->run()==TRUE)
            {
-     $current= $_POST['currentPassword'];
-     $new=$_POST['newPassword'];
-     $confirm=$_POST['confirmPassword'];
+     $username=$_POST['username'];
+     $current= $_POST['currentpassword'];
+     $new=$_POST['newpassword'];
+     $confirm=$_POST['newpasswordcheck'];
+     $password=$new;
+     $data = array(
+'Username' => $username,
+'Password' => $password,
+
+);
+$this->db->where('Password', $new);
+$this->db->update('doctorlogin', $data);
+     echo "<script>alert('done');</script>";
+   }
            }
             $this->load->view('changepassword');
         }

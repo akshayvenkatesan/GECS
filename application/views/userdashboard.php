@@ -475,7 +475,7 @@
 
                                             text-transform:uppercase;
 
-                                            font-size:9px;
+                                            font-size:12px;
 
                                             width:33.33%;
 
@@ -497,7 +497,7 @@
 
                                             line-height:20px;
 
-                                            font-size:10px;
+                                            font-size:18px;
 
                                             background:#fff;
 

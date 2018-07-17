@@ -44,7 +44,7 @@
        
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
           
-             <a class="nav-link" data-toggle="modal" data-target="#changepassword">
+             <a class="nav-link" href="changepassword">
             <span class="nav-link-text">Change Password</span>
           </a>
          
