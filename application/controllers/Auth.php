@@ -363,6 +363,11 @@ $this->load->view('doctorlogin');
       
        $this->load->view('userdashboard');
    }
+     public function userchangepassword()
+   {
+      
+       $this->load->view('userchangepassword');
+   }
     public function changepassword()
         {
           if(isset($_POST['changepasswordbutton']))
