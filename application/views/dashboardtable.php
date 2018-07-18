@@ -188,7 +188,8 @@
      ?>      
      <tr>
          
-         <td><a href="certi"  onclick="<?php $_SESSION['benificiary']=$row->BId; ?>" value="<?php echo $row->BId;?>"><?php echo $row->BId;?></a></td>
+         <td> <a href="certi" value="<?php echo $row->BId;?>" class="benificiary" id="benificiary" onclick="benificiaryfunction()"><?php echo $row->BId;?></a></td>
+              
          <td><?php echo $row->Name;?></td>
          <td><?php echo $row->State;?></td>
          <td><?php echo $row->Status;?></td>
@@ -261,11 +262,13 @@
       </div>
     </div>
     <script>
-   $(".testClick").click(function () {
-        var anchorValue= $(this).attr("href");
-        alert(anchorValue);
-});
+function benificiaryfunction()
+{
+    var x=document.getElementById('benificiary').text;
+    alert(x);
+}
         </script>
+     
     <!-- Bootstrap core JavaScript-->
     <script src="<?php echo base_url(); ?>vendor/jquery/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
