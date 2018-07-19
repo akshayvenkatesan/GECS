@@ -119,7 +119,7 @@
 					<input id="street" class="input100" name="street" placeholder="Street" type="text">
 					<span class="focus-input100"></span>
 				</div>
-					<select class="form-control" name="state" id="state" onclick="cityselection()">
+<!--					<select class="form-control" name="state" id="state" onclick="cityselection()">
 						<option>Please Select Your State</option>
     <option>Andaman and Nicobar</option>
     <option>Andhra Pradesh</option>
@@ -157,9 +157,18 @@
     <option>Uttar Pradesh</option>
     <option>West Bengal</option>
     
-    </select>
+    </select>-->
+                                 <select name="state" id="state" class="form-control input-lg">
+    <option value="">Select State</option>
+    <?php
+    foreach($state as $row)
+    {
+     echo '<option value="'.$row->state_code.'">'.$row->state_name.'</option>';
+    }
+    ?>
+   </select>
 				 <select class="form-control" id="city" name="city">
-    <option>Please Select your city</option>
+    <option> Select city</option>
     
     </select>
 
@@ -180,7 +189,7 @@
 
 					<div class="wrap-input100 validate-input" data-validate = "Please Select your Income">
 					<label class="label-input100" >Annual Income(INR)*</label>
-   <select class="form-control" id="sel2"">
+   <select class="form-control" id="sel2">
     <option>0-1,00,000</option>
     <option>1,00,000-5,00,000</option>
     <option>5,00,000-15,00,000</option>
@@ -376,7 +385,7 @@ else
 		document.getElementById("date").setAttribute("max",x);
 	}
 </script>
-<script>
+<!--<script>
 	function cityselection()
 	{
 		 var select = document.getElementById("city"),
@@ -527,7 +536,30 @@ else
          }
              
 
-</script>
+</script>-->
+<script>
+$(document).ready(function(){
+ $('#state').change(function(){
+  var state_id = $('#state').val();
+  if(state_id != '')
+  {
+   $.ajax({
+    url:"<?php echo base_url(); ?>dynamic_dependent/fetch_city",
+    method:"POST",
+    data:{state_id:state_id},
+    success:function(data)
+    {
+     $('#city').html(data);
+     
+    }
+   });
+  }
+  else
+  {
+   $('#city').html('<option value="">Select city</option>');
+  }
+ });
+ </script>
 
 
 <!--===============================================================================================-->
