@@ -44,7 +44,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                        <a class="nav-link" href="dashboard">
+                        <a class="nav-link" href="userdashboard.php">
                             <i class="fa fa-fw fa-dashboard"></i>
                             <span class="nav-link-text">Dashboard</span>
                         </a>
@@ -143,7 +143,7 @@
                             <a class="dropdown-item small" href="#">View all alerts</a>
                         </div>
                     </li>
-                    <li class="nav-item">
+<!--                    <li class="nav-item">
                         <form class="form-inline my-2 my-lg-0 mr-lg-2">
                             <div class="input-group">
                                 <input class="form-control" type="text" placeholder="Search for...">
@@ -154,7 +154,7 @@
                                 </span>
                             </div>
                         </form>
-                    </li>
+                    </li>-->
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
                             <i class="fa fa-fw fa-sign-out"></i>Logout</a>
