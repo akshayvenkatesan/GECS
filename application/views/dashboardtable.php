@@ -16,6 +16,8 @@
   <link href="<?php echo base_url(); ?>vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="<?php echo base_url(); ?>css/sb-admin.css" rel="stylesheet">
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -188,7 +190,7 @@
      ?>      
      <tr>
          
-         <td> <a href="certi" value="<?php echo $row->BId;?>" class="benificiary" id="benificiary" onclick="benificiaryfunction()"><?php echo $row->BId;?></a></td>
+         <td> <a class="benificiary" href="certi" value="<?php echo $row->BId;?>" onclick="<?php $_SESSION['benificiary']=$row->BId;?>" ><?php echo $row->BId;?></a></td>
               
          <td><?php echo $row->Name;?></td>
          <td><?php echo $row->State;?></td>
@@ -262,11 +264,11 @@
       </div>
     </div>
     <script>
-function benificiaryfunction()
-{
-    var x=document.getElementById('benificiary').text;
-    alert(x);
-}
+$(function(){
+  $('div.benificiary a').click(function(){
+    alert($(this).text());
+  });
+});
         </script>
      
     <!-- Bootstrap core JavaScript-->

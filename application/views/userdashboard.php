@@ -373,7 +373,7 @@
 
                                             width:100%;
 
-                                            margin:0 10%;
+                                            margin:auto;
 
                                             /*stacking fieldsets above each other*/
 
