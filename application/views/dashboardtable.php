@@ -190,7 +190,8 @@
      ?>      
      <tr>
          
-         <td> <a class="benificiary" href="certi" value="<?php echo $row->BId;?>" onclick="<?php $_SESSION['benificiary']=$row->BId;?>" ><?php echo $row->BId;?></a></td>
+         <td> <a class="benificiary" href="certi" value="<?php echo $row->BId;?>" 
+                 onclick="<?php $_SESSION['benificiary']=$row->BId;?>" ><?php echo $row->BId;?></a></td>
               
          <td><?php echo $row->Name;?></td>
          <td><?php echo $row->State;?></td>

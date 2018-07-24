@@ -57,6 +57,13 @@
                             <span class="nav-link-text">Change Password</span>
                         </a>
                     </li>
+                    
+                      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+                          <a class="nav-link" href="departmentcertificate">
+                          
+                            <span class="nav-link-text">Certificate</span>
+                        </a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav sidenav-toggler">
                     <li class="nav-item">

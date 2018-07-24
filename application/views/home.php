@@ -54,68 +54,42 @@
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-default bg-3">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-        <a href="http://www.dhi.nic.in"><img src="<?php echo base_url(); ?>images/logo.jpg " title="Department of Heavy Industries"  /></a> 
-
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-          <br>
-          <li><a href="index.php/auth/login">User Login</a></li>
-        <li><a href="index.php/auth/registration">User Registration</a></li>
-        <li><a href="index.php/auth/doctorlogin">Doctor Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- First Container -->
-<div class="container-fluid bg-1 text-center">
-  <h3 class="margin">What is GECS?</h3>
-  <img src="<?php echo base_url(); ?>images/handicapped.png " class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
-  <h3>GECS(GST Concession Certificate Scheme)</h3>
-</div>
-
-<!-- Second Container -->
-<div class="container-fluid bg-2 text-center">
-  <h3 class="margin">Questions?</h3>
-  <p>Search anything from the website</p>
-  <a href="#" class="btn btn-default btn-lg">
-    <span class="glyphicon glyphicon-search"></span> Search
-  </a>
-</div>
-
-<!-- Third Container (Grid) -->
-<div class="container-fluid bg-3 text-center">    
-  <h3 class="margin">Where To Find Me?</h3><br>
-  <div class="row">
-    <div class="col-sm-4">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="birds1.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="birds2.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-  </div>
-</div>
-
-<!-- Footer -->
-<footer class="container-fluid bg-4 text-center">
-  <div class="copyright">© Copyright 2018 Department of Heavy Industries</div>
-
-</footer>
+		<nav class="navbar navbar-default bg-3">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						
+					</button>
+					<a href="https://dhi.nic.in"><img src="<?php echo base_url(); ?>images/logo.jpg " title="Department of Heavy Industries"  /></a> 
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<br>
+						<li><a href="index.php/auth/registration">Procedure</a></li>
+						<li><a href="index.php/auth/registration">Registration</a></li>
+						<li><a href="index.php/auth/login">Login</a></li>
+						<li><a href="index.php/auth/registration">upload</a></li>
+						<li><a href="index.php/auth/registration">Doctor Certification</a></li>
+						<li><a href="index.php/auth/registration">Tracking </a></li>
+						<li><a href="index.php/auth/doctorlogin">DHI certification</a></li>
+						<li><a href="index.php/auth/doctorlogin">Post Updations</a></li>
+						<li><a href="index.php/auth/doctorlogin">Help</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<!-- First Container -->
+		<div class="container-fluid bg-1 text-center">
+			<h3 class="margin">DHIGECS(GST Concession Certificate Scheme) Beta Version</h3>
+			<img src="<?php echo base_url(); ?>images/handicapped.png " class="" style="display:inline" alt="DHI Banner" width="350" height="350">
+			<h3></h3>
+		</div>
+		
+		<div class="" align=center>
+			<a href="https://www.nic.in" > Designed and Developed by NIC-DHI</a> 
+		</div>
 
 </body>
 </html>
