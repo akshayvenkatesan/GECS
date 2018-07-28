@@ -411,7 +411,7 @@ $this->db->update('userlogin',$data);
 				$data=array('password'=>$new);
 
 $this->db->where('username',$username);
-$this->db->update('userlogin',$data);
+$this->db->update('doctorlogin',$data);
 				echo "<script>alert('done');</script>";
 				}
 				}
