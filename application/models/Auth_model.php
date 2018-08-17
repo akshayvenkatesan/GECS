@@ -50,5 +50,16 @@
 			}
 			
             //echo 'Total Results: ' . $query->num_rows();
-		}
-	
+		
+                
+                 public function find_name($bid)
+  {
+   $q=$this->db->select(['BId'])
+            ->where('Id',$bid)
+            ->get('fakeuser');
+            return $q->row();
+  }
+
+  
+  
+  }

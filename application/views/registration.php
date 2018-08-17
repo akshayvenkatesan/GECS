@@ -111,7 +111,7 @@
 				
 				<label class="label-input100" for="Date">Enter your date of birth *</label>
 				<div class="wrap-input100 validate-input" data-validate = "Select a date!">
-					<input id="datepicker" type="date">
+					<input id="date" type="date">
 					<span class="focus-input100"></span>
 				</div>
 				
@@ -143,6 +143,12 @@
 							}
 						?>
 					</select>
+				</div>
+                                
+                                <label class="label-input100" for="city" >City*</label>
+                                <div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type City Name">
+					<input class="input100" id="city" type="text" name="city" placeholder="City">
+					<span class="focus-input100"></span>
 				</div>
 				<div class="wrap-input100 validate-input" data-validate = "Please Select a Profession">
 					<label class="label-input100" for="email">Select your profession*</label>

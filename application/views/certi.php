@@ -39,10 +39,12 @@
 				<span class="input100">
 			*Required
 				</span>
+                        
 					<label class="label-input100" for="name">Name of Applicant*</label>
-				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name Required">
-					<input id="name" class="input100" type="text" name="name" placeholder="Name" value="<?php echo $_SESSION['benificiary'] ?>">
-					<span class="focus-input100"></span>
+                                        <div>
+                                        <?php echo form_input(['class'=>'form-control',
+                                  'placeholder'=>'Enter Name Title','name'=>'name',
+                                  'value'=>set_value('name',$name->BId)]);  ?>
 				</div>
 			
                 	<label class="label-input100" for="photo">Photograph*</label>
@@ -116,7 +118,7 @@
 				</div>
      <div class="form-group">
                 <div class="col-md-5 col-md-offset-2 image">
-                    <?php echo $captcha; ?>
+                    
                 </div>
     
 <!--                <div class="col-md-5">

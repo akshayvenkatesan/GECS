@@ -220,6 +220,8 @@
 				
 				public function certi()
 				{
+                                   
+                                    
 				
 				
 				
@@ -290,7 +292,10 @@
 				$this->session->set_userdata('captchaWord', $cap['word']);
 				$this->load->view('certi',$data);
 				}
-				public function matching_captcha($str){
+				
+                                
+                                
+                                public function matching_captcha($str){
 				if(strtolower($str) != strtolower($this->session->userdata('captchaWord'))){
 				$this->form_validation->set_message('matching_captcha', 'The {field} did not matching');
 				return false;
@@ -301,7 +306,9 @@
 				}
 				}
 				
-				public function dashboard()
+				
+                                
+                                public function dashboard()
 				{
 				if(isset($_POST['changepasswordbutton']))
 				{
@@ -309,7 +316,9 @@
 				}
 				$this->load->view('dashboard');
 				}
-				public function dashboardtable()
+				
+                                
+                                public function dashboardtable()
 				{
 				$this->load-> model('Auth_model');
 				
@@ -319,7 +328,8 @@
 				
 				
 				}
-				public function doctorlogin()
+				
+                                public function doctorlogin()
 				{
 				if(isset($_POST['submit']))
 				{
@@ -392,7 +402,8 @@ $this->db->update('userlogin',$data);
 				}
 				$this->load->view('userchangepassword');
 				}
-				public function changepassword()
+				
+                                public function changepassword()
 				{
 				if(isset($_POST['changepasswordbutton']))
 				{
@@ -417,6 +428,15 @@ $this->db->update('userlogin',$data);
 				}
 				$this->load->view('changepassword');
 				}
+                                
+                                
+                                 
+                                public function edituser($id)
+   {
+     $this->load->model('auth_model');
+     $name=$this->auth_model->find_name($id);
+     $this->load->view('certi',['name'=>$name]);
+   }
 				
 				}
 								

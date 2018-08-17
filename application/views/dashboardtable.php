@@ -175,10 +175,13 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
+                    
+                    <th>Id</th>
                   <th>BId</th>
                   <th>Name</th>
                   <th>State</th>
                   <th>Status</th>
+                  <th>Edit</th>
                   
                 </tr>
               </thead>
@@ -189,13 +192,17 @@
  foreach ($getUser->result() as $row){
      ?>      
      <tr>
-         
-         <td> <a class="benificiary" href="certi" value="<?php echo $row->BId;?>" 
-                 onclick="<?php $_SESSION['benificiary']=$row->BId;?>" ><?php echo $row->BId;?></a></td>
+         <td><?php echo $row->Id;?></td>
+        
+           <td><a href="certi"  onclick="<?php $_SESSION['benificiary']=$row->BId; ?>" value="<?php echo $row->BId;?>">
+             <?php echo $row->BId;?></a></td>
               
          <td><?php echo $row->Name;?></td>
          <td><?php echo $row->State;?></td>
          <td><?php echo $row->Status;?></td>
+         <td><?=  anchor("auth/edituser/{$row->Id}",'Edit',['class'=>'btn btn-default']);  ?></td>
+		
+		<td>
      </tr>     
         <?php
  }
