@@ -228,7 +228,8 @@
 				if(isset($_POST['certi']))
 				{
 				$this->form_validation->set_rules('name','Name','required');
-				$this->form_validation->set_rules('captcha', 'Captcha', 'trim|required|callback_matching_captcha');
+				
+                               
 				
 				
 				
@@ -264,8 +265,8 @@
 				'permanantnature' => $optradio5
                 );
 				$this->db->insert('tabledoctor', $dat);
-				
-				
+				$this->load->library('Pdf');
+				$this->view->load('departmentcertificate');
 				//        redirect("http://google.com","refresh");
 				}
 				
@@ -275,36 +276,11 @@
 				
 				
 				}
-				$this->load->helper('captcha');
-				$vals = array(
-				'img_path' => './captcha/',
 				
-				'img_url' => base_url().'captcha/',
-				
-				'expiration' => 7200,
-				
-				'word_lenght' => 8,
-				
-				'font_size' => 22
-				);
-				$cap = create_captcha($vals);
-				$data['captcha'] = $cap['image'];
-				$this->session->set_userdata('captchaWord', $cap['word']);
-				$this->load->view('certi',$data);
-				}
-				
+                                }
                                 
                                 
-                                public function matching_captcha($str){
-				if(strtolower($str) != strtolower($this->session->userdata('captchaWord'))){
-				$this->form_validation->set_message('matching_captcha', 'The {field} did not matching');
-				return false;
-				}else{
-				$this->load->library('Pdf');
-				$this->load->view('makepdf');
-				return true;
-				}
-				}
+                                
 				
 				
                                 
@@ -436,6 +412,57 @@ $this->db->update('doctorlogin',$data);
      $this->load->model('auth_model');
      $name=$this->auth_model->find_name($id);
      $this->load->view('certi',['name'=>$name]);
+     if(isset($_POST['certi']))
+				{
+				$this->form_validation->set_rules('name','Name','required');
+				
+                               
+				
+				
+				
+				
+				if($this->form_validation->run()==TRUE){   
+				echo "done";
+				$name=$_POST['name'];
+				$optradio=$_POST['optradio'];
+				$optradio1=$_POST['optradio1'];
+				$optradio2=$_POST['optradio2'];
+				$optradio3=$_POST['optradio3'];
+				$sel1=$_POST['sel1'];
+				if($sel1=="Others*")
+				$sel1=$_POST['deformity'];
+				$optradio4=$_POST['optradio4'];
+				$Figures=$_POST[ 'Figures'];
+				$words=$_POST['words'];
+				$use_app =$_POST['use_app'];
+				$optradio5 = $_POST['optradio5'];
+				
+				
+				
+				$dat= array(
+				'name' =>$name ,
+				'generalmedicalcondition' => $optradio,
+				'generalstateofhealth' => $optradio1,
+				'vision' => $optradio2,
+				'hearing' => $optradio3,
+				'stateofmentalhealth' => $optradio4,
+				'impairment' => $sel1,
+				'percentageofdisability' => $Figures,
+				'use_app' => $use_app,
+				'permanantnature' => $optradio5
+                );
+				$this->db->insert('tabledoctor', $dat);
+				$this->load->library('Pdf');
+				$this->view->load('departmentcertificate');
+				//        redirect("http://google.com","refresh");
+				}
+				
+                
+				
+				
+				
+				
+				}
    }
 				
 				}

@@ -31,7 +31,7 @@
 	<div align="center">
             
 		
-                    <form class="contact100-form validate-form" action="" method="POST" onsubmit="return myfunction(this)">
+                    <form class="contact100-form validate-form" action="" method="POST">
 				<span class="contact100-form-title">
 					Format of Medical Certificate
 				</span>
@@ -125,12 +125,7 @@
                     <a class="refresh" href="javascript:;"><img src="<?php echo base_url(); ?>images/refresh.png"> </a>
                 </div>-->
  </div>
-         <div class="form-group">
-                <label for="captcha" class="col-md-2 control-label">Captcha</label>
-                <div class="col-md-10">
-                    <input class="form-control" name="captcha">
-                </div>
-            </div>
+         
 				
 
 				<div class="container-contact100-form-btn">
@@ -185,49 +180,7 @@ else
 
 
 <script>
-	function myfunction(form)
-	{
-		
-		
-
-		else if(document.getElementById("optradio").checked==false)
-		{
-			alert("Please Select Any One");
-			return false;
-		}
-                	else if(document.getElementById("optradio1").checked==false)
-		{
-			alert("Please Select Any One");
-			return false;
-		}
-                	else if(document.getElementById("optradio2").checked==false)
-		{
-			alert("Please Select Any One");
-			return false;
-		}
-                	else if(document.getElementById("optradio3").checked==false)
-		{
-			alert("Please Select Any One");
-			return false;
-		}
-
-	else if(document.getElementById("optradio4").checked==false)
-		{
-			alert("Please Select Any One");
-			return false;
-		}
-	else if(document.getElementById("optradio5").checked==false)
-		{
-			alert("Please Select Any One");
-			return false;
-		}
-
-
-
-		else
-			return true;
-	}
-</script>
+	f
 
 
 
