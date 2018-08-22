@@ -60,6 +60,12 @@
             return $q->row();
   }
 
-  
+   public function find_id($bid)
+  {
+   $q=$this->db->select(['BId'])
+            ->where('Id',$bid)
+            ->get('fakeuser');
+            return $q->row();
+  }
   
   }

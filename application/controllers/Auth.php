@@ -14,6 +14,7 @@
 			$this->load->library('javascript');
 			$this->load->library('form_validation');
 			$this->load->library('session');
+                        $this->load->helper(array('form', 'url')); 
 			if(!isset($_SESSION['user_logged']))
 			{
 				echo "<script>alert('Please Login to Continue!')</script>";
@@ -282,8 +283,8 @@
 				$sel1=$_POST['deformity'];
 				$optradio4=$_POST['optradio4'];
 				$Figures=$_POST[ 'Figures'];
-				$words=$_POST['words'];
-				$use_app =$_POST['use_app'];
+				
+			
 				$optradio5 = $_POST['optradio5'];
 				
 				
@@ -448,6 +449,8 @@ $this->db->update('doctorlogin',$data);
      $this->load->model('auth_model');
      $name=$this->auth_model->find_name($id);
      $this->load->view('certi',['name'=>$name]);
+    
+     
      if(isset($_POST['certi']))
 				{
 				$this->form_validation->set_rules('name','Name','required');
@@ -469,7 +472,7 @@ $this->db->update('doctorlogin',$data);
 				$sel1=$_POST['deformity'];
 				$optradio4=$_POST['optradio4'];
 				$Figures=$_POST[ 'Figures'];
-				$words=$_POST['words'];
+				
 				$use_app =$_POST['use_app'];
 				$optradio5 = $_POST['optradio5'];
 				
@@ -488,9 +491,8 @@ $this->db->update('doctorlogin',$data);
 				'permanantnature' => $optradio5
                 );
 				$this->db->insert('tabledoctor', $dat);
-				$this->load->library('Pdf');
-				$this->view->load('departmentcertificate');
-				//        redirect("http://google.com","refresh");
+				 $this->load->library('Pdf');
+				redirect('auth/doctorcertificate');
 				}
 				
                 
@@ -500,6 +502,14 @@ $this->db->update('doctorlogin',$data);
 				
 				}
    }
+   public function doctorcertificate()
+   {
+        $this->load->library('Pdf');
+				$this->load->view('doctorcertificate');
+   }
+        
+        }
+
 				
-				}
+				
 								

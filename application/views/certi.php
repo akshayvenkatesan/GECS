@@ -29,9 +29,12 @@
 <body>
 	
 	<div align="center">
-            
-		
+                         
                     <form class="contact100-form validate-form" action="" method="POST">
+          
+		 
+      
+		
 				<span class="contact100-form-title">
 					Format of Medical Certificate
 				</span>
@@ -42,15 +45,17 @@
                         
 					<label class="label-input100" for="name">Name of Applicant*</label>
                                         <div>
+                                            <input type="text" name="name" id="name">   
+                                           
                                         <?php echo form_input(['class'=>'form-control',
                                   'placeholder'=>'Enter Name Title','name'=>'name',
-                                  'value'=>set_value('name',$name->Name)]);  ?>
+                                  'value'=>set_value('name',$name->Name),'id'=>'name']);  ?>
+                                      <?php $_SESSION['benificiary']=$name->Name ?>      
 				</div>
 			
                 	<label class="label-input100" for="photo">Photograph*</label>
                 				<div class="wrap-input100 rs1-wrap-input100">
-                                                    <input id="image" name="image" type="image" width="100" height="30" alt="Applicant">
-                					<span class="focus-input100"></span>
+                                                    <input type = "file" name = "userfile" size = "20" /> 
 				                </div>
 				                	<label class="label-input100" for="optradio">General Medical Condition*</label>
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Select medical condition">
@@ -121,9 +126,7 @@
                     
                 </div>
     
-<!--                <div class="col-md-5">
-                    <a class="refresh" href="javascript:;"><img src="<?php echo base_url(); ?>images/refresh.png"> </a>
-                </div>-->
+
  </div>
          
 				
