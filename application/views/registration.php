@@ -51,13 +51,13 @@
 				</span>
 				<br><br>
 				<span class="contact100-form-title">
-					Benefiary Online Form ( Annexure I) 
+					Beneficiary Online Form(Annexure I) 
 				</span>
 				<span class="input100">
 					*Required
 				</span>
 				
-				<label class="label-input100" for="first-name" >Benificiary Name(as in Aadhar)*</label>
+				<label class="label-input100" for="first-name" >Beneficiary Name(as in Aadhar)*</label>
 				
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
 					<input id="firstname" class="input100" type="text" name="firstname" placeholder="First name">
@@ -111,7 +111,7 @@
 				
 				<label class="label-input100" for="Date">Enter your date of birth *</label>
 				<div class="wrap-input100 validate-input" data-validate = "Select a date!">
-					<input id="date" type="date">
+                                    <input id="date" type="date" name="date">
 					<span class="focus-input100"></span>
 				</div>
 				
@@ -175,7 +175,7 @@
 				
 				<div class="wrap-input100 validate-input" data-validate = "Please Select your Income">
 					<label class="label-input100" >Annual Income(INR)*</label>
-					<select class="form-control" id="income">
+                                        <select class="form-control" id="income" name="income">
 						<option>0-1,00,000</option>
 						<option>1,00,000-5,00,000</option>
 						<option>5,00,000-15,00,000</option>

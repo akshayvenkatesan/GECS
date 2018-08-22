@@ -180,7 +180,7 @@
 				//adding user data into table
 				$data= array(
 				'benificiary_id'=>$benificiary,'user_name' => $name,'father_name' => $fathername, 'nationality' =>$nationality,'gender'=>$gender,'address'=>$address
-				,'city'=>$city,'state'=>$state ,'profession'=>$profession,'aadhar'=>$aadhar,'phone'=>$phone,'email'=>$email, 'license'=> $license
+				,'city'=>$city,'state'=>$state ,'profession'=>$profession,'aadhar'=>$aadhar,'phone'=>$phone,'email'=>$email, 'license'=> $license,'income'=>$income
 				);
 				$this->db->insert('userdata',$data);
 				
