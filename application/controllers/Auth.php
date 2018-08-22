@@ -36,7 +36,8 @@
 				if($this->form_validation->run()==TRUE)
 				{
 					$username= $_POST['username'];
-					$password= md5($_POST['password']);
+					    $password= $_POST['password'];
+                                            $hashedpassword=md5($password);
 					$date= date("Y-m-d h:i:sa");
 					$ipaddress = '';
 					if (getenv('HTTP_CLIENT_IP'))
@@ -55,9 +56,13 @@
 				$ipaddress = 'UNKNOWN';
 				$audit_data=array('Username'=>$username,'Password'=>$password,'time'=>$date,'ipaddress'=>$ipaddress);
 				$this->db->insert('audittable',$audit_data);
+                                $typeofuser=$_POST['typeofuser'];
+                                if($typeofuser=='User')
+                                {
+                                 
 				$this->db->select('*');
 				$this->db->from('userlogin');
-				$this->db->where(array('Username' => $username, 'Password' => $password));
+				$this->db->where(array('Username' => $username, 'Password' => $hashedpassword));
 				$query1= $this->db->get();
 				$user= $query1->row();
 				if($user->Username)
@@ -76,9 +81,39 @@
 				
 				
 				}
+                                else
+                                {
+                                
+				$this->db->select('*');
+				$this->db->from('doctorlogin');
+				$this->db->where(array('Username' => $username, 'Password' => $password));
+				$query1= $this->db->get();
+				$user= $query1->row();
+				if($user->Username)
+				{
+				$this->session->set_flashdata("success","You are logged in");
+				$_SESSION['user_logged']=TRUE;
+				$_SESSION['username']=$user->Username;
+				redirect('auth/dashboard','refresh');
 				}
-				$this->load->view('login');
+                                }
+                                }
+				else
+				{
+				$this->session->set_flashdata("error","No such account exists");
+				redirect('auth/login','refresh');
+				
 				}
+				
+				
+				}
+                                $this->load->view('login');
+                                }
+                                
+                                
+				
+				
+				
 				
 				public function registration()
 				{
@@ -149,7 +184,8 @@
 				);
 				$this->db->insert('userdata',$data);
 				
-				
+				$fakeuserdata=array('BId'=>$benificiary,'Name'=>$name,'State'=>$state);
+                                $this->db->insert('fakeuser',$fakeuserdata);
 				//password generation
 				
 				$string='';
@@ -190,7 +226,7 @@
 				;
 				$this->email->set_newline("\r\n");
 				
-				$this->email->from('iamakshay.v@gmail.com', 'noreply-dhi');
+				$this->email->from('gecsdhi@gmail.com', 'noreply-dhi');
 				$this->email->to($email);
 				
 				$this->email->subject('Login Credentials');

@@ -66,15 +66,9 @@
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav navbar-right">
 						<br>
-						<li><a href="index.php/auth/registration">Procedure</a></li>
-						<li><a href="index.php/auth/registration">Registration</a></li>
-						<li><a href="index.php/auth/login">Login</a></li>
-						<li><a href="index.php/auth/registration">upload</a></li>
-						<li><a href="index.php/auth/registration">Doctor Certification</a></li>
-						<li><a href="index.php/auth/registration">Tracking </a></li>
-						<li><a href="index.php/auth/doctorlogin">DHI certification</a></li>
-						<li><a href="index.php/auth/doctorlogin">Post Updations</a></li>
-						<li><a href="index.php/auth/doctorlogin">Help</a></li>
+						<li><a href="index.php/auth/registration">User Registration</a></li>
+                                                <li><a href="index.php/auth/login">Login</a></li>
+						
 					</ul>
 				</div>
 			</div>

@@ -55,6 +55,12 @@
 					<input id="password" class="input100" type="password" name="password" placeholder="Enter Password">
 					<span class="focus-input100"></span>
 				</div>
+<label class="label-input100">Select the type of user*</label>
+<select class="form-control" id="typeofuser" name="typeofuser">
+                                                
+						<option>User</option>
+						<option>Doctor</option>
+					</select>
 
 				<div class="container-contact100-form-btn">
 					<button class="contact100-form-btn" name="submit" >

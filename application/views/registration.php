@@ -227,7 +227,7 @@
 				</div>
 				
 			</form>
-			<div class="contact100-more flex-col-c-m" style="background-image: url('<?php echo base_url() ?>images/car-for-disabled-people-1.png');">
+			<div class="contact100-more flex-col-c-m" style="background-image: url('<?php echo base_url() ?>images/bg-01.jpg');">
 				<div class="flex-w size1 p-b-47">
 					<div class="txt1 p-r-25">
 						<span class="lnr lnr-map-marker"></span>
@@ -255,7 +255,7 @@
 						</span>
 						
 						<span class="txt3">
-							011-23062740    nic-dhi@gov.in
+							011-23062740
 						</span>
 					</div>
 				</div>
