@@ -44,7 +44,7 @@
                                         <div>
                                         <?php echo form_input(['class'=>'form-control',
                                   'placeholder'=>'Enter Name Title','name'=>'name',
-                                  'value'=>set_value('name',$name->BId)]);  ?>
+                                  'value'=>set_value('name',$name->Name)]);  ?>
 				</div>
 			
                 	<label class="label-input100" for="photo">Photograph*</label>

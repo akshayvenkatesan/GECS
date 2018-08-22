@@ -54,7 +54,7 @@
                 
                  public function find_name($bid)
   {
-   $q=$this->db->select(['BId'])
+   $q=$this->db->select(['Name'])
             ->where('Id',$bid)
             ->get('fakeuser');
             return $q->row();
